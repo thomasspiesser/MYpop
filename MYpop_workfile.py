@@ -20,8 +20,8 @@ import MYpop_plots as pl
 ############ test simulation #########
 ######### load model and setup objects:
 
-# sbml_file = 'v7.5_uni_size_osmo_stress/core_model_osmo_stress_20140623_clean_addon.xml' # osmo-shock model
-sbml_file = 'example_models/model2_6_species.xml' # path to model file
+sbml_file = 'example_models/osmo_stress_model.xml' # osmo-shock model
+# sbml_file = 'example_models/model2_6_species.xml' # path to model file
 local_path = '' # in case you wanna work somewhere else
 user_model = SBML_importer.my_model(sbml_file)
 class_object = model_builder.model_builder(user_model, local_path, T_END=1) # instantiate
@@ -41,7 +41,7 @@ pre = 'low'
 
 culture = Sim_core_user_merged(user_model=user_model, matrix_dim=2, initial_cell_nr=1, events=ev, G1_details=g1d, S_details=sd, G2_details=g2d, M_details=md, parameter_values=pv, precision=pre) # osmo-model
 
-cPickle.dump( culture, open( "my_population.p", "w" ) ) # dump results in file
+cPickle.dump( culture, open( "population_w_osmo_shock.p", "w" ) ) # dump results in file
 sys.exit(1)
 
 ### test multiple events ###
