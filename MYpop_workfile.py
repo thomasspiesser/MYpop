@@ -30,13 +30,13 @@ class_object.build_merged_eq_sys(user_model, local_path)  # build merged_eq_syst
 from Sim_core_user_merged import Sim_core_user_merged # only import after merged_eq_system was built
 
 #### osmo-shock with core
-ev=[['t>=250','osmoe=osmoe+2*NaCl_conc']]
+ev=[['t>=750','osmoe=osmoe+2*NaCl_conc']]
 g1d = 'Cln < 150'
-sd =  'S_length = 30'
-g2d =  'Clb < 50'
-md = 'M_length = 15'
+sd =  'S_length = 25'
+g2d =  'Clb < 150'
+md = 'M_length = 5'
 
-pv={'k_d2': 0.1, 'k_R_G1': 4.52, 'k_R_SG2M': 2.67, 'k_Ad_G1': 0.0, 'k_Am_G1': 1.0, 'k_Am_SG2M': 0.0, 'k_p1': 0.34, 'k_p2': 0.4, 'k_d1': 0.1, 'k_d3': 0.1, 'k_d4': 0.1, 'growth': 0.04, 'k_Ad_SG2M': 1.0, 'P_Cln': 0.4, 'P_Clb': 0.4}
+pv={'k_d2': 0.1, 'k_R_G1': 4.02, 'k_R_SG2M': 1.21, 'k_Ad_G1': 0.0, 'k_Am_G1': 1.0, 'k_Am_SG2M': 0.0, 'k_p1': 0.59, 'k_p2': 1.61, 'k_d1': 0.1, 'k_d3': 0.1, 'k_d4': 0.1, 'growth': 0.06, 'k_Ad_SG2M': 1.0, 'P_Cln': 0.4, 'P_Clb': 0.4}
 pre = 'low'
 
 culture = Sim_core_user_merged(user_model=user_model, matrix_dim=2, initial_cell_nr=1, events=ev, G1_details=g1d, S_details=sd, G2_details=g2d, M_details=md, parameter_values=pv, precision=pre) # osmo-model
