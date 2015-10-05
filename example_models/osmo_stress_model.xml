@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created by COPASI version 4.13 (Build 87) on 2014-11-07 10:17 with libSBML version 5.10.0. -->
+<!-- Created by COPASI version 4.15.96 (Source) on 2015-09-23 12:11 with libSBML version 5.11.1. -->
 <sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
   <model metaid="COPASI0" id="spiesser2012_size_control_Sc" name="spiesser2012_size_control_Sc">
     <notes>
@@ -21,7 +21,7 @@
       </COPASI>
     </annotation>
     <listOfFunctionDefinitions>
-      <functionDefinition id="Constant_flux__irreversible_0" name="Constant flux (irreversible)">
+      <functionDefinition id="Constant_flux__irreversible" name="Constant flux (irreversible)">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -121,6 +121,41 @@
           </lambda>
         </math>
       </functionDefinition>
+      <functionDefinition id="function_14" name="Rate Law for Vos osmoregulation_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> parameter_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_10 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_7 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_8 </ci>
+            </bvar>
+            <bvar>
+              <ci> parameter_9 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> parameter_1 </ci>
+              <ci> parameter_7 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <ci> parameter_8 </ci>
+                  <ci> parameter_10 </ci>
+                </apply>
+                <ci> parameter_9 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
       <functionDefinition id="function_12" name="Rate Law for Gpd1 stress transcription_1">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
@@ -190,41 +225,6 @@
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition id="function_14" name="Rate Law for Vos osmoregulation_1">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> parameter_1 </ci>
-            </bvar>
-            <bvar>
-              <ci> parameter_10 </ci>
-            </bvar>
-            <bvar>
-              <ci> parameter_7 </ci>
-            </bvar>
-            <bvar>
-              <ci> parameter_8 </ci>
-            </bvar>
-            <bvar>
-              <ci> parameter_9 </ci>
-            </bvar>
-            <apply>
-              <times/>
-              <ci> parameter_1 </ci>
-              <ci> parameter_7 </ci>
-              <apply>
-                <minus/>
-                <apply>
-                  <plus/>
-                  <ci> parameter_8 </ci>
-                  <ci> parameter_10 </ci>
-                </apply>
-                <ci> parameter_9 </ci>
-              </apply>
-            </apply>
-          </lambda>
-        </math>
-      </functionDefinition>
       <functionDefinition id="function_11" name="Rate law for Cln1/2 production [1]_1">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
@@ -261,7 +261,7 @@
     <listOfUnitDefinitions>
       <unitDefinition id="volume" name="volume">
         <listOfUnits>
-          <unit kind="litre" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="litre" exponent="1" scale="-15" multiplier="1"/>
         </listOfUnits>
       </unitDefinition>
       <unitDefinition id="time" name="time">
@@ -272,6 +272,16 @@
       <unitDefinition id="substance" name="substance">
         <listOfUnits>
           <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length" name="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="-15" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="-15" multiplier="1"/>
         </listOfUnits>
       </unitDefinition>
     </listOfUnitDefinitions>
@@ -338,7 +348,7 @@
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI5" id="species_4" name="glycerol" compartment="compartment_1" initialConcentration="3.313" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI5" id="species_4" name="glycerol" compartment="compartment_1" initialConcentration="0.4996230185" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -368,7 +378,7 @@
           </COPASI>
         </annotation>
       </species>
-      <species metaid="COPASI7" id="species_6" name="mGpd1" compartment="compartment_1" initialConcentration="0.049" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="COPASI7" id="species_6" name="mGpd1" compartment="compartment_1" initialConcentration="0.0589312554" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -430,7 +440,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI11" id="parameter_2" name="growth" value="0.0409953" constant="true">
+      <parameter metaid="COPASI11" id="parameter_2" name="growth" value="0.0578939386" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>nutrient quality term</pre>
@@ -450,7 +460,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI12" id="parameter_3" name="k_R" value="1" constant="true">
+      <parameter metaid="COPASI12" id="parameter_3" name="k_R" value="3.56126" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <pre>energy allocation to internal biomass (ribosomes etc.)</pre>
@@ -525,7 +535,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI16" id="parameter_7" name="Lp" value="2.58422615690102e-06" constant="true">
+      <parameter metaid="COPASI16" id="parameter_7" name="Lp" value="2.58e-06" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -555,7 +565,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI18" id="parameter_9" name="Pi" value="103517052.805" constant="false">
+      <parameter metaid="COPASI18" id="parameter_9" name="Pi" value="91880320.733465" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -585,7 +595,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI20" id="parameter_11" name="dAddt" value="0.449439141827279" constant="false">
+      <parameter metaid="COPASI20" id="parameter_11" name="dAddt" value="0.311334869037257" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -600,7 +610,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI21" id="parameter_12" name="dAmdt" value="0.449439141827279" constant="false">
+      <parameter metaid="COPASI21" id="parameter_12" name="dAmdt" value="0.311334869037257" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -630,7 +640,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI23" id="parameter_14" name="VosPt0" value="0.54" constant="false">
+      <parameter metaid="COPASI23" id="parameter_14" name="VosPt0" value="0.5876961324" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -705,7 +715,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI28" id="parameter_19" name="osmoi" value="25.027" constant="false">
+      <parameter metaid="COPASI28" id="parameter_19" name="osmoi" value="22.2136230185" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -795,7 +805,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI34" id="parameter_25" name="factor" value="0.999682709184638" constant="false">
+      <parameter metaid="COPASI34" id="parameter_25" name="factor" value="0.909016924679799" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -810,7 +820,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI35" id="parameter_26" name="kosmo" value="0.000952174562329408" constant="false">
+      <parameter metaid="COPASI35" id="parameter_26" name="kosmo" value="0.556623890840597" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -825,7 +835,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI36" id="parameter_27" name="ko1" value="7.97525" constant="true">
+      <parameter metaid="COPASI36" id="parameter_27" name="ko1" value="1" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -840,7 +850,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI37" id="parameter_28" name="ko2" value="0.875002" constant="true">
+      <parameter metaid="COPASI37" id="parameter_28" name="ko2" value="0.8752279501" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -855,7 +865,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI38" id="parameter_29" name="ko3" value="14.9654" constant="true">
+      <parameter metaid="COPASI38" id="parameter_29" name="ko3" value="40" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -870,7 +880,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI39" id="parameter_30" name="kfps1" value="4.47790171715243e-07" constant="false">
+      <parameter metaid="COPASI39" id="parameter_30" name="kfps1" value="0.00446406482557126" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -885,7 +895,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI40" id="parameter_31" name="kf1" value="0.605132" constant="true">
+      <parameter metaid="COPASI40" id="parameter_31" name="kf1" value="0.0070949241" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -900,7 +910,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI41" id="parameter_32" name="kf2" value="1538540" constant="true">
+      <parameter metaid="COPASI41" id="parameter_32" name="kf2" value="18176.019889614" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -915,7 +925,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI42" id="parameter_33" name="kHog1" value="0.95208368954464" constant="false">
+      <parameter metaid="COPASI42" id="parameter_33" name="kHog1" value="0.00481670675364076" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -930,7 +940,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI43" id="parameter_34" name="kgpd1" value="111198" constant="true">
+      <parameter metaid="COPASI43" id="parameter_34" name="kgpd1" value="2036741486.97893" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -945,7 +955,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI44" id="parameter_35" name="ktransl" value="2.57252e-08" constant="true">
+      <parameter metaid="COPASI44" id="parameter_35" name="ktransl" value="7.97e-08" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -960,7 +970,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI45" id="parameter_36" name="kdeg2" value="0.0263114" constant="true">
+      <parameter metaid="COPASI45" id="parameter_36" name="kdeg2" value="0.0206148371" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -975,7 +985,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI46" id="parameter_37" name="kdeg1" value="0.0736589" constant="true">
+      <parameter metaid="COPASI46" id="parameter_37" name="kdeg1" value="0.0313083658" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -990,7 +1000,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI47" id="parameter_38" name="kbasal" value="1.90362e-05" constant="true">
+      <parameter metaid="COPASI47" id="parameter_38" name="kbasal" value="6.37e-07" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1005,7 +1015,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI48" id="parameter_39" name="ktransc" value="0.253222" constant="true">
+      <parameter metaid="COPASI48" id="parameter_39" name="ktransc" value="0.6444240371" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1020,7 +1030,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI49" id="parameter_40" name="kf3" value="10" constant="true">
+      <parameter metaid="COPASI49" id="parameter_40" name="kf3" value="0.1746878668" constant="true">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1050,7 +1060,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI51" id="parameter_42" name="k__Cln_plus" value="0.999991770680517" constant="false">
+      <parameter metaid="COPASI51" id="parameter_42" name="k__Cln_plus" value="0.999999999998784" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1065,7 +1075,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI52" id="parameter_43" name="k__Clb_plus" value="0.620347486915295" constant="false">
+      <parameter metaid="COPASI52" id="parameter_43" name="k__Clb_plus" value="1" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1080,7 +1090,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI53" id="parameter_44" name="k__B_R" value="0.999682709184638" constant="false">
+      <parameter metaid="COPASI53" id="parameter_44" name="k__B_R" value="0.909016924679799" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1095,7 +1105,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI54" id="parameter_45" name="k__B_Am" value="0.999682709184638" constant="false">
+      <parameter metaid="COPASI54" id="parameter_45" name="k__B_Am" value="0.909016924679799" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1110,7 +1120,7 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter metaid="COPASI55" id="parameter_46" name="k__B_Ad" value="0.999682709184638" constant="false">
+      <parameter metaid="COPASI55" id="parameter_46" name="k__B_Ad" value="0.909016924679799" constant="false">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -1125,10 +1135,66 @@
           </COPASI>
         </annotation>
       </parameter>
-      <parameter id="kmgpd1" name="kmgpd1" value="1" constant="true"/>
-      <parameter id="VosPt0_fraction" name="VosPt0_fraction" value="0.9" constant="true"/>
-      <parameter id="hog1threshold" name="hog1threshold" value="3.07" constant="true"/>
-      <parameter id="khforkosmo" name="khforkosmo" value="0.001" constant="true"/>
+      <parameter metaid="COPASI65" id="kmgpd1" name="kmgpd1" value="0.001444144" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI65">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-09-23T12:08:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI66" id="VosPt0_fraction" name="VosPt0_fraction" value="0.979493554" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI66">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-09-23T12:10:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI67" id="hog1threshold" name="hog1threshold" value="0.0748622888" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI67">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-09-23T12:07:20Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
+      <parameter metaid="COPASI68" id="khforkosmo" name="khforkosmo" value="115.2155324154" constant="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI68">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-09-23T12:08:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+      </parameter>
     </listOfParameters>
     <listOfInitialAssignments>
       <initialAssignment symbol="species_7">
@@ -1651,7 +1717,7 @@
               <times/>
               <ci> compartment_1 </ci>
               <apply>
-                <ci> Constant_flux__irreversible_0 </ci>
+                <ci> Constant_flux__irreversible </ci>
                 <ci> parameter_38 </ci>
               </apply>
             </apply>
